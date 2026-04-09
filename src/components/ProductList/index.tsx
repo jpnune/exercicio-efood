@@ -1,0 +1,60 @@
+import { useState } from 'react'
+import type { Product } from '../../models/Product'
+import ProductCard from '../ProductCard'
+import { useCart } from '../../contexts/CartContext'
+import * as S from './styles'
+
+type Props = {
+  products: Product[]
+}
+
+const ProductList = ({ products }: Props) => {
+  const [modalProduct, setModalProduct] = useState<Product | null>(null)
+  const { addItem } = useCart()
+
+  const handleAddToCart = (product: Product) => {
+    addItem(product)
+    setModalProduct(null)
+  }
+
+  return (
+    <>
+      <S.List>
+        {products.map((product) => (
+          <div key={product.id} onClick={() => setModalProduct(product)}>
+            <ProductCard product={product} />
+          </div>
+        ))}
+      </S.List>
+
+      {modalProduct && (
+        <S.Modal className={modalProduct ? 'is-visible' : ''}>
+          <S.ModalContent>
+            <header>
+              <button type="button" onClick={() => setModalProduct(null)}>
+                Fechar
+              </button>
+            </header>
+            <main>
+              <img src={modalProduct.foto} alt={modalProduct.nome} />
+              <div>
+                <h4>{modalProduct.nome}</h4>
+                <p>{modalProduct.descricao}</p>
+                <p>Serve: {modalProduct.porcao}</p>
+                <button
+                  type="button"
+                  onClick={() => handleAddToCart(modalProduct)}
+                >
+                  Adicionar ao carrinho - R$ {modalProduct.preco.toFixed(2)}
+                </button>
+              </div>
+            </main>
+          </S.ModalContent>
+          <div className="overlay" onClick={() => setModalProduct(null)}></div>
+        </S.Modal>
+      )}
+    </>
+  )
+}
+
+export default ProductList

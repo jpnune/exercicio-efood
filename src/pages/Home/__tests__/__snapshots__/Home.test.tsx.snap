@@ -1,0 +1,296 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Teste de Integração da página Home Deve manter a integridade estrutural da página (Snapshot) 1`] = `
+<DocumentFragment>
+  <header
+    class="sc-gJhJfT dVEvEw"
+  >
+    <div
+      class="sc-brayMQ eJGJjM"
+    >
+      <img
+        alt="efood"
+        class="sc-dsLRjI jmYjkT"
+        src="test-file-stub"
+      />
+      <h1
+        class="sc-fQpSrZ hHTntV"
+      >
+        Viva experiências gastronômicas no conforto da sua casa
+      </h1>
+    </div>
+  </header>
+  <div
+    class="sc-cBYhWN cfzEuN"
+  >
+    <ul
+      class="sc-jCbFWg hZybBh"
+    >
+      <a
+        data-discover="true"
+        href="/perfil/1"
+        style="text-decoration: none;"
+      >
+        <div
+          class="sc-iKTbCL chYBC"
+        >
+          <img
+            alt="Lulas e Crustáceos"
+            class="sc-gnpauu jSmnsO"
+            src="test-file-stub"
+          />
+          <div
+            class="sc-la-DyAJ deHPuk"
+          >
+            <div
+              class="sc-iCZxss dnFKIM"
+            >
+              Destaque da semana
+            </div>
+            <div
+              class="sc-iCZxss dnFKIM"
+            >
+              Frutos do Mar
+            </div>
+          </div>
+          <div
+            class="sc-knetEQ hjTwIw"
+          >
+            <div
+              class="sc-dnaVFx joIgmh"
+            >
+              <h3>
+                Lulas e Crustáceos
+              </h3>
+              <div>
+                <span>
+                  4.9
+                </span>
+                <span
+                  style="margin-left: 8px; color: rgb(255, 184, 77);"
+                >
+                  ★
+                </span>
+              </div>
+            </div>
+            <p
+              class="sc-kkmxCq ea-DmyA"
+            >
+              Explore o sabor exótico de nossas lulas e crustáceos selecionados. Ingredientes frescos vindos diretamente do mar para o seu prato, preparados com técnicas exclusivas de alta gastronomia mediterrânea.
+            </p>
+            <span
+              class="sc-dkiZCX gTZbji"
+            >
+              Saiba mais
+            </span>
+          </div>
+        </div>
+      </a>
+      <a
+        data-discover="true"
+        href="/perfil/2"
+        style="text-decoration: none;"
+      >
+        <div
+          class="sc-iKTbCL chYBC"
+        >
+          <img
+            alt="Peixes Selecionados"
+            class="sc-gnpauu jSmnsO"
+            src="test-file-stub"
+          />
+          <div
+            class="sc-la-DyAJ deHPuk"
+          >
+            <div
+              class="sc-iCZxss dnFKIM"
+            >
+              Especiais
+            </div>
+          </div>
+          <div
+            class="sc-knetEQ hjTwIw"
+          >
+            <div
+              class="sc-dnaVFx joIgmh"
+            >
+              <h3>
+                Peixes Selecionados
+              </h3>
+              <div>
+                <span>
+                  4.8
+                </span>
+                <span
+                  style="margin-left: 8px; color: rgb(255, 184, 77);"
+                >
+                  ★
+                </span>
+              </div>
+            </div>
+            <p
+              class="sc-kkmxCq ea-DmyA"
+            >
+              A autêntica culinária litorânea com os melhores peixes da temporada. Filés suculentos e preparos leves que realçam o sabor natural de cada espécie. Uma experiência refrescante e inesquecível.
+            </p>
+            <span
+              class="sc-dkiZCX gTZbji"
+            >
+              Saiba mais
+            </span>
+          </div>
+        </div>
+      </a>
+      <a
+        data-discover="true"
+        href="/perfil/3"
+        style="text-decoration: none;"
+      >
+        <div
+          class="sc-iKTbCL chYBC"
+        >
+          <img
+            alt="Nossas Porções"
+            class="sc-gnpauu jSmnsO"
+            src="test-file-stub"
+          />
+          <div
+            class="sc-la-DyAJ deHPuk"
+          >
+            <div
+              class="sc-iCZxss dnFKIM"
+            >
+              Petiscos
+            </div>
+          </div>
+          <div
+            class="sc-knetEQ hjTwIw"
+          >
+            <div
+              class="sc-dnaVFx joIgmh"
+            >
+              <h3>
+                Nossas Porções
+              </h3>
+              <div>
+                <span>
+                  4.7
+                </span>
+                <span
+                  style="margin-left: 8px; color: rgb(255, 184, 77);"
+                >
+                  ★
+                </span>
+              </div>
+            </div>
+            <p
+              class="sc-kkmxCq ea-DmyA"
+            >
+              O acompanhamento perfeito para seus momentos de descontração. Porções generosas de petiscos crocantes e acompanhamentos clássicos, ideais para compartilhar com amigos e família.
+            </p>
+            <span
+              class="sc-dkiZCX gTZbji"
+            >
+              Saiba mais
+            </span>
+          </div>
+        </div>
+      </a>
+      <a
+        data-discover="true"
+        href="/perfil/4"
+        style="text-decoration: none;"
+      >
+        <div
+          class="sc-iKTbCL chYBC"
+        >
+          <img
+            alt="Saladas Frescas"
+            class="sc-gnpauu jSmnsO"
+            src="test-file-stub"
+          />
+          <div
+            class="sc-la-DyAJ deHPuk"
+          >
+            <div
+              class="sc-iCZxss dnFKIM"
+            >
+              Leves
+            </div>
+          </div>
+          <div
+            class="sc-knetEQ hjTwIw"
+          >
+            <div
+              class="sc-dnaVFx joIgmh"
+            >
+              <h3>
+                Saladas Frescas
+              </h3>
+              <div>
+                <span>
+                  4.6
+                </span>
+                <span
+                  style="margin-left: 8px; color: rgb(255, 184, 77);"
+                >
+                  ★
+                </span>
+              </div>
+            </div>
+            <p
+              class="sc-kkmxCq ea-DmyA"
+            >
+              Equilíbrio e saúde em cada garfada. Nossas saladas são compostas por folhas selecionadas, grãos nobres e molhos artesanais, garantindo uma refeição leve, nutritiva e cheia de frescor.
+            </p>
+            <span
+              class="sc-dkiZCX gTZbji"
+            >
+              Saiba mais
+            </span>
+          </div>
+        </div>
+      </a>
+    </ul>
+  </div>
+  <footer
+    class="sc-jzjJTG bsBpMw"
+  >
+    <img
+      alt="efood"
+      class="sc-czglUn hreqJs"
+      src="test-file-stub"
+    />
+    <ul
+      class="sc-tOlxE kMXXAB"
+    >
+      <li>
+        <a
+          href="#"
+        >
+          Instagram
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+        >
+          Facebook
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+        >
+          Twitter
+        </a>
+      </li>
+    </ul>
+    <p
+      class="sc-eJgwXh hPCrVN"
+    >
+      A efood é uma plataforma para divulgação de estabelecimentos, a responsabilidade pela entrega, qualidade dos produtos é toda do estabelecimento contratado.
+    </p>
+  </footer>
+</DocumentFragment>
+`;

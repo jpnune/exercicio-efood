@@ -1,0 +1,3 @@
+ler a pasta "src\assets\estrutura" para entender as estruturas das paginas como deve ser. 
+a ideia do site é fazer um site com formato de cardapio como na pasta de estrutura, porem as cores do site e imagem deve ser usadas a imagens  "src\assets\brainstorm" para ter ideia da paleta de cores e imagens de fundo. as imagens que vao ser usada para os pratos e bebidas do cardapio estao na pasta "src\assets\bebidas" e "src\assets\comidas"
+nao faça o site tudo de uma vez, crie uma arquivo que contem as etapas que vao ser feitas, cada etapa(task) deve estar descrita de forma que um agente de IA sem contexto consiga fazer a task
