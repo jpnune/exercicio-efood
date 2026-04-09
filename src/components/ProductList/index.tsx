@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import type { Product } from '../../models/Product'
 import ProductCard from '../ProductCard'
-import { useCart } from '../../contexts/CartContext'
+import { useAppDispatch } from '../../store/hooks'
+import { addItem } from '../../store/cartSlice'
 import * as S from './styles'
 
 type Props = {
@@ -10,10 +11,10 @@ type Props = {
 
 const ProductList = ({ products }: Props) => {
   const [modalProduct, setModalProduct] = useState<Product | null>(null)
-  const { addItem } = useCart()
+  const dispatch = useAppDispatch()
 
   const handleAddToCart = (product: Product) => {
-    addItem(product)
+    dispatch(addItem(product))
     setModalProduct(null)
   }
 

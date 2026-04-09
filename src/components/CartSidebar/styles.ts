@@ -72,25 +72,66 @@ export const CartItemInfo = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 
   h4 {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 900;
     color: ${(props) => props.theme.colors.primary};
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
 
-  span {
+  .price {
     font-size: 14px;
     font-weight: 400;
     color: ${(props) => props.theme.colors.text};
   }
 `
 
+export const QuantityControls = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+`
+
+export const QuantityButton = styled.button`
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 4px;
+  background-color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.white};
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, transform 0.1s;
+  line-height: 1;
+  padding: 0;
+
+  &:hover {
+    background-color: ${(props) => props.theme.colors.secondary};
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+`
+
+export const QuantityValue = styled.span`
+  font-size: 14px;
+  font-weight: 700;
+  color: ${(props) => props.theme.colors.text};
+  min-width: 20px;
+  text-align: center;
+`
+
 export const RemoveButton = styled.button`
   position: absolute;
-  bottom: 8px;
+  top: 8px;
   right: 8px;
   background: none;
   border: none;
@@ -211,24 +252,32 @@ export const Label = styled.label`
   margin-bottom: 4px;
 `
 
-export const Input = styled.input`
+export const Input = styled.input<{ $hasError?: boolean }>`
   width: 100%;
   padding: 8px;
-  border: none;
+  border: 2px solid ${(props) => (props.$hasError ? '#ff6b6b' : 'transparent')};
   border-radius: 4px;
   font-size: 14px;
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: ${(props) => props.$hasError ? '#fff0f0' : props.theme.colors.background};
   color: ${(props) => props.theme.colors.text};
   outline: none;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, border-color 0.2s, background-color 0.2s;
 
   &:focus {
-    box-shadow: 0 0 0 2px ${(props) => props.theme.colors.secondary};
+    box-shadow: 0 0 0 2px ${(props) => props.$hasError ? '#ff6b6b' : props.theme.colors.secondary};
   }
 
   &::placeholder {
     color: rgba(3, 4, 94, 0.4);
   }
+`
+
+export const ErrorMessage = styled.span`
+  display: block;
+  font-size: 12px;
+  color: #ffc9c9;
+  margin-top: 2px;
+  font-weight: 500;
 `
 
 export const InputRow = styled.div`

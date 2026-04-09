@@ -48,11 +48,13 @@ export const HeaderLinks = styled.div`
   font-size: 18px;
 
   a {
-    color: ${(props) => props.theme.colors.primary};
+    color: ${(props) => props.theme.colors.text};
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
   }
 
   span {
-    color: ${(props) => props.theme.colors.primary};
+    color: ${(props) => props.theme.colors.text};
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
@@ -69,7 +71,8 @@ export const Title = styled.h1`
   text-align: center;
   margin-top: 138px;
   max-width: 540px;
-  color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.text};
+  text-shadow: 0 2px 6px rgba(255, 255, 255, 0.7);
   z-index: 1;
 `
 
@@ -80,7 +83,8 @@ export const Logo = styled.img`
 `
 
 export const CartLink = styled.span`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.text};
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
   cursor: pointer;
   font-weight: 900;
   font-size: 18px;

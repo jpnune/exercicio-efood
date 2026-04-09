@@ -1,22 +1,23 @@
 import { BrowserRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
+import { store } from './store'
 import { theme } from './styles/theme'
 import GlobalStyles from './styles/GlobalStyles'
 import Rotas from './routes'
-import { CartProvider } from './contexts/CartContext'
 import CartSidebar from './components/CartSidebar'
 
 function App() {
   return (
-    <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <CartProvider>
+    <Provider store={store}>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
           <GlobalStyles />
           <Rotas />
           <CartSidebar />
-        </CartProvider>
-      </ThemeProvider>
-    </BrowserRouter>
+        </ThemeProvider>
+      </BrowserRouter>
+    </Provider>
   )
 }
 

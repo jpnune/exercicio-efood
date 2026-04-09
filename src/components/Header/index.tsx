@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.png'
-import { useCart } from '../../contexts/CartContext'
+import { useAppSelector, useAppDispatch } from '../../store/hooks'
+import { openCart } from '../../store/cartSlice'
 import * as S from './styles'
 
 type Props = {
@@ -8,7 +9,10 @@ type Props = {
 }
 
 const Header = ({ variant = 'home' }: Props) => {
-  const { totalItems, openCart } = useCart()
+  const dispatch = useAppDispatch()
+  const totalItems = useAppSelector((state) =>
+    state.cart.items.reduce((sum, item) => sum + item.quantity, 0)
+  )
 
   return (
     <S.HeaderBar $variant={variant}>
@@ -17,7 +21,7 @@ const Header = ({ variant = 'home' }: Props) => {
           <S.HeaderLinks>
             <Link to="/">Home</Link>
             <S.Logo src={logo} alt="efood" />
-            <S.CartLink onClick={openCart}>
+            <S.CartLink onClick={() => dispatch(openCart())}>
               {totalItems} produto(s) no carrinho
             </S.CartLink>
           </S.HeaderLinks>
