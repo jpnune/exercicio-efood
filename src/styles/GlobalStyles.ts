@@ -14,9 +14,8 @@ const GlobalStyles = createGlobalStyle`
   body {
     background-color: ${(props) => props.theme.colors.background};
     background-image: url(${backgroundBody});
-    background-repeat: repeat-y;
-    background-position: center top;
-    background-size: contain;
+    background-attachment: fixed;
+    background-size: cover;
     color: ${(props) => props.theme.colors.text};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
