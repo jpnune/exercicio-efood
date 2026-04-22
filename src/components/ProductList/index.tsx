@@ -22,9 +22,11 @@ const ProductList = ({ products }: Props) => {
     <>
       <S.List>
         {products.map((product) => (
-          <div key={product.id} onClick={() => setModalProduct(product)}>
-            <ProductCard product={product} />
-          </div>
+          <ProductCard
+            key={product.id}
+            product={product}
+            onCardClick={(p) => setModalProduct(p)}
+          />
         ))}
       </S.List>
 
