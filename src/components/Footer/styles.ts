@@ -1,31 +1,55 @@
 import styled from 'styled-components'
+import { colors } from '../../styles'
 
-export const Container = styled.footer`
-  background-color: ${(props) => props.theme.colors.secondary};
+export const FooterContainer = styled.footer`
+  background-color: ${colors.cardDish};
   padding: 40px 0;
+  text-align: center;
+`
+
+export const FooterContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `
 
-export const Logo = styled.img`
-  width: 125px;
-  height: 57px;
-  margin-bottom: 32px;
-`
-
-export const SocialLinks = styled.ul`
+export const SocialLinks = styled.nav`
   display: flex;
-  margin-bottom: 80px;
+  gap: 8px;
+  margin: 32px 0 80px;
 
-  li {
-    margin: 0 8px;
+  a {
+    color: ${colors.white};
+    background-color: ${colors.primary};
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
   }
 `
 
-export const Copyright = styled.p`
+export const Logo = styled.a`
+  font-size: 24px;
+  font-weight: 900;
+  color: ${colors.primary};
+  text-decoration: none;
+`
+
+export const Copy = styled.p`
   font-size: 10px;
-  line-height: 12px;
-  text-align: center;
   max-width: 480px;
+  margin: 0 auto;
+  color: ${colors.primary};
 `

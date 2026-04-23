@@ -1,23 +1,15 @@
-import { BrowserRouter } from 'react-router-dom'
-import { Provider } from 'react-redux'
-import { ThemeProvider } from 'styled-components'
-import { store } from './store'
-import { theme } from './styles/theme'
-import GlobalStyles from './styles/GlobalStyles'
-import Rotas from './routes'
-import CartSidebar from './components/CartSidebar'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home/Home'
+import RestaurantProfile from './pages/RestaurantProfile/RestaurantProfile'
 
 function App() {
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <ThemeProvider theme={theme}>
-          <GlobalStyles />
-          <Rotas />
-          <CartSidebar />
-        </ThemeProvider>
-      </BrowserRouter>
-    </Provider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/restaurante/:id" element={<RestaurantProfile />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

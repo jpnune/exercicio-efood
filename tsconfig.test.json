@@ -1,19 +1,13 @@
 {
-  "extends": "./tsconfig.app.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "module": "commonjs",
-    "verbatimModuleSyntax": false,
+    "module": "CommonJS",
     "moduleResolution": "node",
     "allowImportingTsExtensions": false,
-    "noEmit": false,
-    "types": ["node", "jest", "@testing-library/jest-dom"]
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "types": ["jest", "@testing-library/jest-dom"],
+    "esModuleInterop": true
   },
-  "include": [
-    "src/**/*.test.tsx",
-    "src/**/*.test.ts",
-    "src/**/__tests__/*",
-    "src/setupTests.ts",
-    "src/utils/test-utils.tsx",
-    "src/**/*.d.ts"
-  ]
+  "include": ["src", "__mocks__"]
 }
