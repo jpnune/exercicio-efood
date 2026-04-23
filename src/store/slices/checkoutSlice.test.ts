@@ -1,7 +1,6 @@
 import checkoutReducer, {
   setStep,
   setDeliveryData,
-  setPaymentData,
   setOrderId,
   resetCheckout,
   selectCheckoutStep,
