@@ -1,8 +1,17 @@
 import { useForm } from 'react-hook-form'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
-import { setPaymentData, setStep, setOrderId } from '../../store/slices/checkoutSlice'
-import { selectCartTotal } from '../../store/slices/cartSlice'
-import { PaymentData } from '../../types'
+import {
+  setPaymentData,
+  setStep,
+  setOrderId,
+  setLoading,
+  setApiError,
+  selectIsLoading,
+  selectApiError,
+  selectDeliveryData,
+} from '../../store/slices/checkoutSlice'
+import { selectCartItems, selectCartTotal } from '../../store/slices/cartSlice'
+import { PaymentData, OrderPayload } from '../../types'
 import {
   maskCardNumber,
   maskCvv,
@@ -22,12 +31,20 @@ import {
   Row,
   ErrorMessage,
   SubmitButton,
-  SecondaryButton
+  SecondaryButton,
+  ApiErrorMessage,
 } from './styles'
+
+const API_URL = 'https://api-ebac.vercel.app/api/efood/checkout'
 
 const PaymentForm = () => {
   const dispatch = useAppDispatch()
   const total = useAppSelector(selectCartTotal)
+  const isLoading = useAppSelector(selectIsLoading)
+  const apiError = useAppSelector(selectApiError)
+  const deliveryData = useAppSelector(selectDeliveryData)
+  const cartItems = useAppSelector(selectCartItems)
+
   const {
     register,
     handleSubmit,
@@ -38,11 +55,64 @@ const PaymentForm = () => {
   const formatPrice = (price: number) =>
     price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
 
-  const onSubmit = (data: PaymentData) => {
+  const onSubmit = async (data: PaymentData) => {
+    if (!deliveryData) return
+
     dispatch(setPaymentData(data))
-    const orderId = Math.random().toString(36).substr(2, 9).toUpperCase()
-    dispatch(setOrderId(orderId))
-    dispatch(setStep('confirm'))
+    dispatch(setLoading(true))
+    dispatch(setApiError(null))
+
+    const payload: OrderPayload = {
+      products: cartItems.map((item) => ({
+        id: item.dish.id,
+        price: item.dish.preco,
+      })),
+      delivery: {
+        receiver: deliveryData.receiver,
+        address: {
+          description: deliveryData.address,
+          city: deliveryData.city,
+          zipCode: deliveryData.zipCode,
+          number: Number(deliveryData.number),
+          complement: deliveryData.complement ?? '',
+        },
+      },
+      payment: {
+        card: {
+          name: data.cardName,
+          number: data.cardNumber.replace(/\s/g, ''),
+          code: Number(data.cvv),
+          expires: {
+            month: Number(data.expiryMonth),
+            year: Number(data.expiryYear),
+          },
+        },
+      },
+    }
+
+    try {
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+
+      if (!response.ok) {
+        throw new Error(`Erro ${response.status}: ${response.statusText}`)
+      }
+
+      const result = await response.json()
+      dispatch(setOrderId(result.orderId ?? result.id ?? 'N/A'))
+      dispatch(setStep('confirm'))
+    } catch (err) {
+      const message =
+        err instanceof Error
+          ? err.message
+          : 'Erro ao processar pedido. Tente novamente.'
+      dispatch(setApiError(message))
+    } finally {
+      dispatch(setLoading(false))
+    }
   }
 
   return (
@@ -50,6 +120,12 @@ const PaymentForm = () => {
       <Title>
         Pagamento — Valor a pagar {formatPrice(total)}
       </Title>
+
+      {apiError && (
+        <ApiErrorMessage role="alert" data-testid="api-error-message">
+          {apiError}
+        </ApiErrorMessage>
+      )}
 
       <FieldGroup>
         <label htmlFor="cardName">Nome no cartão</label>
@@ -186,13 +262,18 @@ const PaymentForm = () => {
         )}
       </FieldGroup>
 
-      <SubmitButton type="submit" data-testid="finalize-payment-btn">
-        Finalizar pagamento
+      <SubmitButton
+        type="submit"
+        data-testid="finalize-payment-btn"
+        disabled={isLoading}
+      >
+        {isLoading ? 'Finalizando pedido...' : 'Finalizar pagamento'}
       </SubmitButton>
       <SecondaryButton
         type="button"
         onClick={() => dispatch(setStep('delivery'))}
         data-testid="back-to-delivery-btn"
+        disabled={isLoading}
       >
         Voltar para a edição de endereço
       </SecondaryButton>

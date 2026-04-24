@@ -9,6 +9,8 @@ interface CheckoutState {
   deliveryData: DeliveryData | null
   paymentData: PaymentData | null
   orderId: string | null
+  isLoading: boolean
+  apiError: string | null
 }
 
 const initialState: CheckoutState = {
@@ -16,6 +18,8 @@ const initialState: CheckoutState = {
   deliveryData: null,
   paymentData: null,
   orderId: null,
+  isLoading: false,
+  apiError: null,
 }
 
 const checkoutSlice = createSlice({
@@ -34,11 +38,19 @@ const checkoutSlice = createSlice({
     setOrderId(state, action: PayloadAction<string>) {
       state.orderId = action.payload
     },
+    setLoading(state, action: PayloadAction<boolean>) {
+      state.isLoading = action.payload
+    },
+    setApiError(state, action: PayloadAction<string | null>) {
+      state.apiError = action.payload
+    },
     resetCheckout(state) {
       state.step = 'cart'
       state.deliveryData = null
       state.paymentData = null
       state.orderId = null
+      state.isLoading = false
+      state.apiError = null
     },
   },
 })
@@ -48,6 +60,8 @@ export const {
   setDeliveryData,
   setPaymentData,
   setOrderId,
+  setLoading,
+  setApiError,
   resetCheckout,
 } = checkoutSlice.actions
 
@@ -56,5 +70,7 @@ export const selectCheckoutStep = (state: RootState) => state.checkout.step
 export const selectDeliveryData = (state: RootState) => state.checkout.deliveryData
 export const selectPaymentData = (state: RootState) => state.checkout.paymentData
 export const selectOrderId = (state: RootState) => state.checkout.orderId
+export const selectIsLoading = (state: RootState) => state.checkout.isLoading
+export const selectApiError = (state: RootState) => state.checkout.apiError
 
 export default checkoutSlice.reducer

@@ -99,3 +99,15 @@ export const ConfirmText = styled.p`
   font-size: 14px;
   line-height: 1.6;
 `
+
+export const ApiErrorMessage = styled.div`
+  background-color: rgba(255, 80, 80, 0.15);
+  border: 1px solid rgba(255, 80, 80, 0.5);
+  border-radius: 4px;
+  color: #ffb3b3;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  line-height: 1.4;
+`
