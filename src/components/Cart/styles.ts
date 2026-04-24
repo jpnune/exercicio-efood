@@ -28,7 +28,7 @@ export const List = styled.ul`
 `
 
 export const Item = styled.li`
-  background-color: ${colors.cardDish};
+  background-color: ${colors.beige};
   padding: 8px;
   display: flex;
   position: relative;
@@ -85,7 +85,7 @@ export const Total = styled.div`
 `
 
 export const Button = styled.button`
-  background-color: ${colors.cardDish};
+  background-color: ${colors.beige};
   color: ${colors.primary};
   font-weight: bold;
   font-size: 14px;

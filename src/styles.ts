@@ -1,10 +1,10 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const colors = {
-  primary: '#e66767',
-  bg: '#fff8f2',
-  cardDish: '#ffebd9',
-  white: '#ffffff',
+  primary: '#E66767',
+  background: '#FFF8F2',
+  beige: '#FFEBD9',
+  white: '#FFFFFF',
   textDark: '#1a1a1a',
   overlay: 'rgba(0, 0, 0, 0.8)',
 }
@@ -20,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: ${colors.bg};
+    background-color: ${colors.background};
     color: ${colors.textDark};
     line-height: 1.5;
   }

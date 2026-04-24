@@ -8,7 +8,7 @@ export const Page = styled.div`
 `
 
 export const Hero = styled.section`
-  background-color: ${colors.bg};
+  background-color: ${colors.beige};
   padding: 40px 0 160px;
   text-align: center;
 `

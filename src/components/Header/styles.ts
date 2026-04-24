@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { colors } from '../../styles'
 
 export const HeaderBar = styled.header<{ $variant: 'home' | 'profile' }>`
-  background-color: ${colors.bg};
+  background-color: ${colors.beige};
   padding: 40px 0;
   display: block;
 `

@@ -25,14 +25,14 @@ export const Content = styled.div`
 export const Name = styled.h3`
   font-size: 16px;
   font-weight: 900;
-  color: ${colors.cardDish};
+  color: ${colors.beige};
   margin-bottom: 8px;
 `
 
 export const Description = styled.p`
   font-size: 14px;
   line-height: 22px;
-  color: ${colors.cardDish};
+  color: ${colors.beige};
   margin-bottom: 8px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -41,7 +41,7 @@ export const Description = styled.p`
 `
 
 export const Button = styled.button`
-  background-color: ${colors.cardDish};
+  background-color: ${colors.beige};
   color: ${colors.primary};
   font-size: 14px;
   font-weight: bold;

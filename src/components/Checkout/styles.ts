@@ -35,7 +35,7 @@ export const FieldGroup = styled.div<{ $width?: string }>`
     width: 100%;
 
     &:focus {
-      outline: 2px solid ${colors.cardDish};
+      outline: 2px solid ${colors.beige};
     }
   }
 `
@@ -47,12 +47,12 @@ export const Row = styled.div`
 
 export const ErrorMessage = styled.span`
   font-size: 12px;
-  color: ${colors.cardDish};
+  color: ${colors.beige};
   font-weight: 700;
 `
 
 export const SubmitButton = styled.button`
-  background-color: ${colors.cardDish};
+  background-color: ${colors.beige};
   color: ${colors.primary};
   border: none;
   padding: 8px;

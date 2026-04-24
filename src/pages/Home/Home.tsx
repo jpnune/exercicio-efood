@@ -23,7 +23,7 @@ const Home = () => {
       <Header variant="home" />
 
       <main>
-        <Hero>
+        <Hero >
           <div className="container">
             <HeroText>
               Viva experiências gastronômicas<br />

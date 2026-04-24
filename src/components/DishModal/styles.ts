@@ -76,7 +76,7 @@ export const Portion = styled.p`
 `
 
 export const AddBtn = styled.button`
-  background-color: ${colors.cardDish};
+  background-color: ${colors.beige};
   color: ${colors.primary};
   font-weight: bold;
   padding: 4px 8px;

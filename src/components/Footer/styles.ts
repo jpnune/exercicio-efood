@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { colors } from '../../styles'
 
 export const FooterContainer = styled.footer`
-  background-color: ${colors.cardDish};
+  background-color: ${colors.beige};
   padding: 40px 0;
   text-align: center;
 `
