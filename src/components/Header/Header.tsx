@@ -1,6 +1,7 @@
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
 import { openCart, selectCartCount } from '../../store/slices/cartSlice'
 import { HeaderBar, HeaderContainer, Logo, BackLink, CartButton } from './styles'
+import logo from '../../assets/images/logo.png'
 
 interface HeaderProps {
   variant?: 'home' | 'profile'
@@ -20,7 +21,7 @@ const Header = ({ variant = 'home' }: HeaderProps) => {
         )}
 
         <Logo to="/" data-testid="logo">
-          efood
+          <img src={logo} alt="efood" />
         </Logo>
 
         {variant === 'profile' && (

@@ -68,7 +68,7 @@ export const Description = styled.p`
 
 export const Button = styled.button`
   background-color: ${colors.primary};
-  color: ${colors.white};
+  color: ${colors.beige};
   border: none;
   padding: 4px 6px;
   font-size: 14px;

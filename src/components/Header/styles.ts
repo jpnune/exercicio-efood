@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { colors } from '../../styles'
+import fundo from '../../assets/images/fundo.png'
 
 export const HeaderBar = styled.header<{ $variant: 'home' | 'profile' }>`
-  background-color: ${colors.beige};
+  background-image: url(${fundo});
   padding: 40px 0;
   display: block;
 `
@@ -20,11 +21,7 @@ export const HeaderContainer = styled.div<{ $variant: 'home' | 'profile' }>`
 `
 
 export const Logo = styled(Link)`
-  font-size: 24px;
-  font-weight: 900;
-  color: ${colors.primary};
   text-decoration: none;
-  letter-spacing: -1px;
 `
 
 export const BackLink = styled(Link)`

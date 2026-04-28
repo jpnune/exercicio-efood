@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { colors } from '../../styles'
+import fundo from '../../assets/images/fundo.png'
 
 export const Page = styled.div`
   min-height: 100vh;
@@ -8,7 +9,7 @@ export const Page = styled.div`
 `
 
 export const Hero = styled.section`
-  background-color: ${colors.beige};
+  background-image: url(${fundo});
   padding: 40px 0 160px;
   text-align: center;
 `
