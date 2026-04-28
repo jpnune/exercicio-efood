@@ -34,7 +34,9 @@ export const BannerInner = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  padding: 32px 0;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  width: 100%;
 `
 
 export const RestaurantType = styled.span`
