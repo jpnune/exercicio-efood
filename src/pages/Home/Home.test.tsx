@@ -1,4 +1,4 @@
-import { render, screen, waitFor, act } from '@testing-library/react'
+import { render, screen, waitFor, act, fireEvent } from '@testing-library/react'
 import { Provider } from 'react-redux'
 import { MemoryRouter } from 'react-router-dom'
 import { configureStore } from '@reduxjs/toolkit'
@@ -6,6 +6,13 @@ import Home from './Home'
 import cartReducer from '../../store/slices/cartSlice'
 import checkoutReducer from '../../store/slices/checkoutSlice'
 import { Restaurant } from '../../types'
+
+const mockedNavigate = jest.fn()
+
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useNavigate: () => mockedNavigate,
+}))
 
 const mockRestaurants: Restaurant[] = [
   {
@@ -53,6 +60,10 @@ const renderHome = async () => {
 }
 
 describe('Home', () => {
+  beforeEach(() => {
+    mockedNavigate.mockClear()
+  })
+
   it('deve renderizar o texto do hero banner', async () => {
     await renderHome()
     expect(screen.getByText(/Viva experiências gastronômicas/i)).toBeInTheDocument()
@@ -73,5 +84,27 @@ describe('Home', () => {
       const cards = screen.getAllByTestId('restaurant-card')
       expect(cards).toHaveLength(2)
     })
+  })
+
+  it('deve navegar para a página do restaurante ao clicar no botão "Saiba mais"', async () => {
+    await renderHome()
+    await waitFor(() => {
+      expect(screen.getAllByTestId('saiba-mais-btn')).toHaveLength(2)
+    })
+
+    const buttons = screen.getAllByTestId('saiba-mais-btn')
+    
+    fireEvent.click(buttons[0])
+    expect(mockedNavigate).toHaveBeenCalledWith('/restaurante/1')
+
+    fireEvent.click(buttons[1])
+    expect(mockedNavigate).toHaveBeenCalledWith('/restaurante/2')
+  })
+
+  it('deve renderizar o botão do logo funcionando como âncora', async () => {
+    await renderHome()
+    const logoButton = screen.getByTestId('logo')
+    expect(logoButton).toBeInTheDocument()
+    expect(logoButton.getAttribute('href')).toBe('/')
   })
 })
