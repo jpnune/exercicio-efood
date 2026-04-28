@@ -20,7 +20,7 @@ const createTestStore = (items = [{ dish: mockDish, quantity: 1 }]) =>
     reducer: { cart: cartReducer, checkout: checkoutReducer },
     preloadedState: {
       cart: { isOpen: true, items },
-      checkout: { step: 'cart' as const, deliveryData: null, paymentData: null, orderId: null },
+      checkout: { step: 'cart' as const, deliveryData: null, paymentData: null, orderId: null, isLoading: false, apiError: null },
     },
   })
 

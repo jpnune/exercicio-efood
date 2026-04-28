@@ -104,6 +104,8 @@ describe('cartSlice', () => {
         deliveryData: null,
         paymentData: null,
         orderId: null,
+        isLoading: false,
+        apiError: null,
       },
     }
 

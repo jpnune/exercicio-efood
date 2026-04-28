@@ -13,6 +13,8 @@ const initialState = {
   deliveryData: null,
   paymentData: null,
   orderId: null,
+  isLoading: false,
+  apiError: null,
 }
 
 const mockDelivery: DeliveryData = {
