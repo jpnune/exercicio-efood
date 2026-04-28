@@ -1,11 +1,12 @@
 import { FooterContainer, FooterContent, SocialLinks, Logo, Copy } from './styles'
+import logo from '../../assets/images/logo.png'
 
 const Footer = () => {
   return (
     <FooterContainer>
       <FooterContent className="container">
         <Logo href="/" data-testid="footer-logo">
-          efood
+          <img src={logo} alt="efood" />
         </Logo>
 
         <SocialLinks aria-label="Redes sociais">

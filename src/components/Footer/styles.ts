@@ -41,9 +41,6 @@ export const SocialLinks = styled.nav`
 `
 
 export const Logo = styled.a`
-  font-size: 24px;
-  font-weight: 900;
-  color: ${colors.primary};
   text-decoration: none;
 `
 
