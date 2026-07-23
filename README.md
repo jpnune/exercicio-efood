@@ -155,7 +155,7 @@ npm run test:coverage
 
 O projeto está hospedado na **Vercel** com deploy automático a partir da branch `main`.
 
-🔗 **URL de Produção:** [exercicio-efood](exercicio-efood-dr1a73d9s-joao-paulo-s-projects-68291a6f.vercel.app)
+🔗 **URL de Produção:** [exercicio-efood](https://exercicio-efood-62skr4ty5-joao-paulo-s-projects-68291a6f.vercel.app/)
 
 A configuração do deploy está definida no arquivo `vercel.json` na raiz do projeto.
 
