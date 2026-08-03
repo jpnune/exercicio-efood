@@ -8,7 +8,7 @@
 [![Vite](https://img.shields.io/badge/Vite-Build%20Tool-646CFF?style=flat-square&logo=vite)](https://vitejs.dev/)
 [![Redux Toolkit](https://img.shields.io/badge/Redux%20Toolkit-2.3.0-764ABC?style=flat-square&logo=redux)](https://redux-toolkit.js.org/)
 
-🔗 **[Acesse o projeto em produção]((https://exercicio-efood-78n3hvvct-joao-paulo-s-projects-68291a6f.vercel.app/))**
+🔗 **[Acesse o projeto em produção](https://exercicio-efood-78n3hvvct-joao-paulo-s-projects-68291a6f.vercel.app/)**
 
 ---
 
